@@ -1,11 +1,10 @@
 import cv2
 import numpy as np
-import tensorflow
 from tensorflow.python.keras.models import load_model
 
-model = load_model("emotion_recognition_model.h5")
+model = load_model("data\ER_model_training12ep.h5")
 
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier("data\haarcascade_frontalface_default.xml")
 
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 emotion_colors = [(0, 0, 255), (0, 0, 255), (0, 0, 255), (0, 255, 0), (0, 0, 255), (255, 0, 0), (255, 255, 255)]
