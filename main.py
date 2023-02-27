@@ -57,6 +57,8 @@ cap = cv2.VideoCapture(camera_input)
 while True:
     ret, frame = cap.read()
 
+   #cv2.putText(frame, "Emotion Detection By KPZ", (00, 300), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 0.4, cv2.LINE_AA, False)
+
     if ret:
         frame_count += 1
 
@@ -89,8 +91,9 @@ while True:
         cv2.rectangle(frame, (x, y), (x+w, y+h), emotion_colors[emotion_index], 2)
         
         cv2.putText(frame, emotion, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 1, emotion_colors[emotion_index], 2)
+        
 
-    cv2.imshow('Emotion Detection', frame)
+    cv2.imshow('Emotion Detection ZSCL By KPZ', frame)
 
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
