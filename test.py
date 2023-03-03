@@ -5,11 +5,15 @@ import threading
 
 # Model and cascade files
 model_file = "data\ER_model_training12ep.h5"
-cascade_file = "data\haarcascade_frontalface_default.xml"
+cascade_file = ["data\haarcascade_frontalface_default.xml", "data\haarcascade_profileface.xml"]
+
+for i in  range(len(cascade_file)):
+    face_cascade = cv2.CascadeClassifier(cascade_file[i])    
+
 
 # Load model and cascade classifier
 model = load_model(model_file)
-face_cascade = cv2.CascadeClassifier(cascade_file)
+
 
 # Emotion labels and colors
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
